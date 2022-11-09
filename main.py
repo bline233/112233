@@ -6,7 +6,7 @@ import requests
 import os
 import random
 
-today = datetime.now()
+today = datetime.utcnow()
 today = today + timedelta(hours=8)
 start_date = os.environ['START_DATE']
 city = os.environ['CITY']
