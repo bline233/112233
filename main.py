@@ -9,6 +9,7 @@ import random
 today = datetime.utcnow()
 today = today + timedelta(hours=8)
 start_date = os.environ['START_DATE']
+Home_date = os.environ['HOME_DATE']
 city = os.environ['CITY']
 birthday = os.environ['BIRTHDAY']
 
@@ -30,7 +31,7 @@ def get_count():
   return delta.days
 
 def get_home():
-  deltaa = today - datetime.strptime(start_date, "%Y-%m-%d")
+  deltaa = today - datetime.strptime(Home_date, "%Y-%m-%d")
   return deltaa.days
 
 def get_birthday():
