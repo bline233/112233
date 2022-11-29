@@ -9,7 +9,7 @@ import random
 today = datetime.utcnow()
 today = today + timedelta(hours=8)
 start_date = os.environ['START_DATE']
-home_date = os.environ['HOME_DATE']
+Home_date = os.environ['HOME_DATE']
 city = os.environ['CITY']
 birthday = os.environ['BIRTHDAY']
 
@@ -31,8 +31,8 @@ def get_count():
   return delta.days
 
 def get_home():
-  delta = today - datetime.strptime(home_date, "%Y-%m-%d")
-  return delta.days
+  deltaa = today - datetime.strptime(Home_date, "%Y-%m-%d")
+  return deltaa.days
 
 def get_birthday():
   next = datetime.strptime(str(date.today().year) + "-" + birthday, "%Y-%m-%d")
@@ -54,6 +54,6 @@ client = WeChatClient(app_id, app_secret)
 
 wm = WeChatMessage(client)
 wea, temperature = get_weather()
-data = {"weather":{"value":wea},"temperature":{"value":temperature},"love_days":{"value":get_count()},"home_days":{"value":get_home()},"birthday_left":{"value":get_birthday()},"words":{"value":get_words(), "color":get_random_color()}}
+data = {"weather":{"value":wea},"temperature":{"value":temperature},"love_days":{"value":get_count()},"birthday_left":{"value":get_birthday()},"words":{"value":get_words(), "color":get_random_color()},"home_days":{"value":get_home()}}
 res = wm.send_template(user_id, template_id, data)
 print(res)
