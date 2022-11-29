@@ -9,7 +9,7 @@ import random
 today = datetime.utcnow()
 today = today + timedelta(hours=8)
 start_date = os.environ['START_DATE']
-Home_date = os.environ['HOME_DATE']
+Home_date = os.environ['HOMEE_DATE']
 city = os.environ['CITY']
 birthday = os.environ['BIRTHDAY']
 
